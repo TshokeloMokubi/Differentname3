@@ -6,7 +6,7 @@ from surprise import Dataset
 from surprise.model_selection import cross_validate
 import surprise
 
-train = pd.read_csv('\data\train.csv')
+train = pd.read_csv('..\data\train.csv')
 # test = pd.read_csv('data/test.csv')
 
 # creating the model
