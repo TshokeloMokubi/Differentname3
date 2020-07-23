@@ -11,7 +11,7 @@ train = pd.read_csv('~/surprise-svdpp/rando/surprise-svdpp/train.csv')
 
 # creating the model
 
-cv = 2
+cv = 3
 train_subset = 0.0001
 random_state = 1
 reader = surprise.Reader(rating_scale = (0.5,5.0))
