@@ -6,13 +6,13 @@ from surprise import Dataset
 from surprise.model_selection import cross_validate
 import surprise
 
-train = pd.read_csv('input/edsa-recommender-system-predict/train.csv')
-test = pd.read_csv('input/edsa-recommender-system-predict/test.csv')
+train = pd.read_csv('train.csv')
+test = pd.read_csv('test.csv')
 
 # creating the model
 
 cv = 2
-train_subset = 0.1
+train_subset = 0.0001
 random_state = 1
 reader = surprise.Reader(rating_scale = (0.5,5.0))
 dftrain = train.drop('timestamp', axis = 'columns')
