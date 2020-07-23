@@ -52,7 +52,7 @@ li=[]
 for o,p in zip2:
     li.append(str(o)+'_'+str(p))
 
-fin.to_csv('jhb_rm61.csv', index = False)
+finsub.to_csv('jhb_rm61.csv', index = False)
 
 
 
