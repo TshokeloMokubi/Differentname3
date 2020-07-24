@@ -11,7 +11,6 @@ from surprise.model_selection import cross_validate
 import surprise
 import joblib
 import pickle
-import date
 
 
 train = pd.read_csv('~/unsupervised_data/unsupervised_movie_data/train.csv')
