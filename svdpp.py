@@ -23,7 +23,7 @@ test = pd.read_csv('~/unsupervised_data/unsupervised_movie_data/test.csv')
 
 print("finished loading the data =", datetime.now().time())
 cv = 3
-train_subset = 0.5
+train_subset = 0.9
 random_state = 1
 reader = surprise.Reader(rating_scale = (0.5,5.0))
 dftrain = train.drop('timestamp', axis = 'columns')
