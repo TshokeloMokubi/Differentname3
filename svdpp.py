@@ -23,7 +23,7 @@ test = pd.read_csv('~/unsupervised_data/unsupervised_movie_data/test.csv')
 
 print("finished loading the data =", datetime.now().time())
 cv = 3
-train_subset = 0.9
+train_subset = 0.4
 random_state = 1
 reader = surprise.Reader(rating_scale = (0.5,5.0))
 dftrain = train.drop('timestamp', axis = 'columns')
@@ -46,6 +46,8 @@ print("finished combining the data with the reader =", datetime.now().time())
 
 alg = surprise.SVDpp()#lr_all = dict['lr_all'], reg_all = dict['reg_all'])
 print("finished creating the svdpp object =", datetime.now().time())
+print("started model training =", datetime.now().time())
+
 
 output = alg.fit(data.build_full_trainset())
 print(output)
