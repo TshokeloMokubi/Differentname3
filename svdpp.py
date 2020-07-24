@@ -5,6 +5,8 @@ from surprise import SVD
 from surprise import Dataset
 from surprise.model_selection import cross_validate
 import surprise
+import joblib
+import pickle
 
 train = pd.read_csv('~/unsupervised_data/unsupervised_movie_data/train.csv')
 test = pd.read_csv('~/unsupervised_data/unsupervised_movie_data/test.csv')
