@@ -59,10 +59,16 @@ predictions = alg.test(test.values)
 del test['rating']
 print("finished predictions on testset =", now)
 finpred = [ m.est for m in predictions]
-test['rating'] = finpred
 
 
-test.to_csv('jhb_rm61.csv', index = False)
+zip2 = zip(test['userId'],test['movieId'])
+li=[]
+for o,p in zip2:
+    li.append(str(o)+'_'+str(p))
+finsub = pd.DataFrame(li, columns =  ['Id'])
+finsub['rating'] = finpred
+
+finsub.to_csv('jhb_rm61.csv', index = False)
 print("finished saving a pickle =", now)
 with open('svdpp.pkl','wb') as file:
     pickle.dump(alg, file)
