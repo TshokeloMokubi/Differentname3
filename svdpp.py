@@ -45,14 +45,12 @@ del test['rating']
 
 finpred = [ m.est for m in predictions]
 test['rating'] = finpred
-finsub = test.copy()
 
-zip2 = zip(test['userId'],test['movieId'])
-li=[]
-for o,p in zip2:
-    li.append(str(o)+'_'+str(p))
 
-finsub.to_csv('jhb_rm61.csv', index = False)
+test.to_csv('jhb_rm61.csv', index = False)
+
+with open('svdpp.pkl','wb') as file:
+    pickle.dump(alg, file)
 
 
 
