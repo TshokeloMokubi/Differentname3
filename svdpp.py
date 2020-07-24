@@ -14,7 +14,7 @@ test = pd.read_csv('~/unsupervised_data/unsupervised_movie_data/test.csv')
 # creating the model
 
 cv = 3
-train_subset = 0.0001
+train_subset = 0.1
 random_state = 1
 reader = surprise.Reader(rating_scale = (0.5,5.0))
 dftrain = train.drop('timestamp', axis = 'columns')
@@ -29,9 +29,9 @@ grid_s.fit(data)
 dict = grid_s.best_params['rmse']
 dict
 
-# dftrain = train.drop('timestamp', axis = 'columns')
-# dftrain = dftrain.reset_index(drop = True)
-# data = surprise.Dataset.load_from_df(dftrain, reader) 
+dftrain = train.drop('timestamp', axis = 'columns')
+dftrain = dftrain.reset_index(drop = True)
+data = surprise.Dataset.load_from_df(dftrain, reader) 
 
 dict = grid_s.best_params['rmse']
 alg = surprise.SVDpp(lr_all = dict['lr_all'], reg_all = dict['reg_all'])
